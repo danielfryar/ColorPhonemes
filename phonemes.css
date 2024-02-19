@@ -1,0 +1,239 @@
+/* :root {
+    --phon-color-AA: red;
+    --phon-color-AE: orange;
+    --phon-color-AH: yellow;
+    --phon-color-AO: red;
+    --phon-color-AW: red;
+    --phon-color-AY: red;
+    --phon-color-EH: red;
+
+    --phon-color-S: chartreuse;
+    --phon-color-K: hotpink;
+    --phon-color-F: purple;
+    --phon-color-L: blue;
+    --phon-color-IY: yellow; 
+} */
+/* VOWELS */
+.colphon_AA, .colphon_AA0, .colphon_AA1, .colphon_AA2{
+  color: blue;
+}
+.colphon_AE, .colphon_AE0, .colphon_AE1, .colphon_AE2{
+  color: blue;
+}
+.colphon_AH, .colphon_AH0, .colphon_AH1, .colphon_AH2{
+  color: blue;
+}
+.colphon_AO, .colphon_AO0, .colphon_AO1, .colphon_AO2{
+  color: blue;
+}
+.colphon_AW, .colphon_AW0, .colphon_AW1, .colphon_AW2{
+  color: blue;
+}
+.colphon_AY, .colphon_AY0, .colphon_AY1, .colphon_AY2{
+  color: blue;
+}
+.colphon_EH, .colphon_EH0, .colphon_EH1, .colphon_EH2{
+  color: blue;
+}
+.colphon_ER, .colphon_ER0, .colphon_ER1, .colphon_ER2{
+  color: blue;
+}
+.colphon_EY, .colphon_EY0, .colphon_EY1, .colphon_EY2{
+    color: blue;
+}
+.colphon_IH, .colphon_IH0, .colphon_IH1, .colphon_IH2{
+  color: blue;
+}
+.colphon_IY, .colphon_IY0, .colphon_IY1, .colphon_IY2{
+  color: blue;
+}
+.colphon_OW, .colphon_OW0, .colphon_OW1, .colphon_OW2{
+  color: blue;
+}
+.colphon_OY, .colphon_OY0, .colphon_OY1, .colphon_OY2{
+  color: blue;
+}
+.colphon_UH, .colphon_UH0, .colphon_UH1, .colphon_UH2{
+  color: blue;
+}
+.colphon_UW, .colphon_UW0, .colphon_UW1, .colphon_UW2{
+  color: blue;
+}
+
+/* SEMIVOWELS */
+.colphon_W{
+  color: purple;
+}
+.colphon_Y{
+  color: purple;
+}
+
+/* ASPIRATE */
+.colphon_HH{
+  color: orchid;
+}
+
+/* LIQUID */
+.colphon_L{
+  color: green;
+}
+.colphon_R{
+  color: green;
+}
+
+/* NASAL */
+.colphon_M{
+  color: greenyellow;
+}
+.colphon_N{
+  color: greenyellow;
+}
+.colphon_NG{
+  color: greenyellow;
+}
+
+/* FRICATIVE */
+.colphon_DH{
+  color: goldenrod;
+}
+.colphon_F{
+  color: goldenrod;
+}
+.colphon_S{
+  color: goldenrod;
+}
+.colphon_SH{
+  color: goldenrod;
+}
+.colphon_TH{
+  color: goldenrod;
+}
+.colphon_V{
+  color: goldenrod;
+}
+.colphon_Z{
+  color: goldenrod;
+}
+.colphon_ZH{
+  color: goldenrod;
+}
+
+/* AFFRICATE */
+.colphon_CH{
+  color: orangered;
+}
+.colphon_JH{
+  color: orangered;
+}
+
+/* STOPS */
+.colphon_B{
+  color: red;
+}
+.colphon_D{
+  color: red;
+}
+.colphon_G{
+  color: red;
+}
+.colphon_K{
+  color: red;
+}
+.colphon_P{
+  color: red;
+}
+.colphon_T{
+  color: red;
+}
+
+.phon_color_grp{
+  border: black 2px solid;
+  border-radius: 5;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+.main {
+  margin: auto;
+  margin-top: 3rem;
+  max-width: 400px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ h3{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+}
+
+.submit-button {
+  width: 400px;
+  padding: 10px;
+  background-color: #1976d2;
+  color: white;
+  cursor: pointer;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-container ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.todo-container ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  max-width: 250px;
+}
+
+.todo-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.todo-description {
+  max-width: 70%;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
