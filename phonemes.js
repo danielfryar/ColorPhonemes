@@ -57,7 +57,7 @@ let phonemes = {
 //     '
 // ]
 
-fetch('./CMUdict/cmudict-0.7b')
+fetch('./cmudict-0.7b')
 .then(response => response.text())
 .then(text => {
   // phonemeDictionary = response.dictionary;
