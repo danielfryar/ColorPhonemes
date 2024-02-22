@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <title>ColorPhonem.es</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ColorPhonemes</title>
+    <!-- <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="phonemes.css">
 </head>
-<body>
+<body class="container">
     <h1>
         <span class="colword"><span class="colphon_W">W</span><span class="colphon_EH1">e</span><span class="colphon_L">l</span><span class="colphon_K">c</span><span class="colphon_AH0">o</span><span class="colphon_M">m</span><span class="colphon_X">e</span></span>
         <span class="colword"><span class="colphon_T">t</span><span class="colphon_UW1">o</span></span>
@@ -14,156 +18,178 @@
         <span class="colword"><span class="colphon_X">!</span></span>
     </h1>
     <main>
-        <article id="colorText"></article>
+        <div class="card" hidden>
+            <article class="card-body" id="colorText"></article>
+        </div>
+        <br>
         <form action="">
 
-            <textarea name="words" id="words" cols="50" rows="30"></textarea><br>
-            <button id="colorize" disabled>Dictionary Loading...</button>
+            <textarea name="words" id="words" cols="50" rows="12"></textarea><br>
+            <button class="btn btn-primary" id="colorize_btn" disabled>
+                <span class="" id="col_btn_txt">Dictionary Loading...</span>
+            </button>
             <section id="controls">
                 
             </section>
         </form>
-
+<br>
         <form action="color_choices">
+            <ul class="list-group">
             <section class="phon_color_grp">
-                <label for="vowels_color">Vowels</label>
-                <input type="color" name="vowels_color" id="vowels_color" value="#0000ff"/>
-                <label for="vowels_color_all">Apply to all Vowels</label>
-                <input type="checkbox" name="vowels_color_all" id="vowels_color_all" checked>
-                <br>
-                <label for="AA_color">AA</label>
-                <input type="color" name="AA_color" id="AA_color" value="#0000ff" disabled/>
-                <label for="AE_color">AE</label>
-                <input type="color" name="AE_color" id="AE_color" value="#0000ff" disabled/>
-                <label for="AH_color">AH</label>
-                <input type="color" name="AH_color" id="AH_color" value="#0000ff" disabled/>
-                <br>
-                <label for="AO_color">AO</label>
-                <input type="color" name="AO_color" id="AO_color" value="#0000ff" disabled/>
-                <label for="AW_color">AW</label>
-                <input type="color" name="AW_color" id="AW_color" value="#0000ff" disabled/>
-                <label for="AY_color">AY</label>
-                <input type="color" name="AY_color" id="AY_color" value="#0000ff" disabled/>
-                <br>
-                <label for="EH_color">EH</label>
-                <input type="color" name="EH_color" id="EH_color" value="#0000ff" disabled/>
-                <label for="ER_color">ER</label>
-                <input type="color" name="ER_color" id="ER_color" value="#0000ff" disabled/>
-                <label for="EY_color">EY</label>
-                <input type="color" name="EY_color" id="EY_color" value="#0000ff" disabled/>
-                <br>
-                <label for="IH_color">IH</label>
-                <input type="color" name="IH_color" id="IH_color" value="#0000ff" disabled/>
-                <label for="IY_color">IY</label>
-                <input type="color" name="IY_color" id="IY_color" value="#0000ff" />
-                <br>
-                <label for="OW_color">OW</label>
-                <input type="color" name="OW_color" id="OW_color" value="#0000ff" disabled/>
-                <label for="OY_color">OY</label>
-                <input type="color" name="OY_color" id="OY_color" value="#0000ff" disabled/>
-                <br>
-                <label for="UH_color">UH</label>
-                <input type="color" name="UH_color" id="UH_color" value="#0000ff" disabled/>
-                <label for="UW_color">UW</label>
-                <input type="color" name="UW_color" id="UW_color" value="#0000ff" disabled/>
+                <li class="list-group-item" id="vowels_top">
+                    <input type="checkbox" name="vowels_color_all" id="vowels_color_all" >
+                    <input type="color" name="vowels_color" id="vowels_color" value="#0000ff"/>
+                    <label for="vowels_color">Vowels</label>
+                    <!-- <select name="color" id="color">
+                        <option value="red" style="background: #d32f2f;">red</option>
+                        <option value="pink" style="background: #c2185b;">pink</option>
+                        <option value="purple" style="background: #7b1fa2;">purple</option>
+                        <option value="deeppurple" style="background: #512da8;">deep purple</option>
+                        <option value="indigo" style="background: #303f9f;">indigo</option>
+                        <option value="blue" style="background: #1976d2;">blue</option>
+                    </select> -->
+                </li>
+                <li class="list-group-item vowel-items" hidden>
+                    <label for="AA_color">AA</label>
+                    <input type="color" name="AA_color" id="AA_color" value="#0000ff"/>
+                    <label for="AE_color">AE</label>
+                    <input type="color" name="AE_color" id="AE_color" value="#0000ff"/>
+                    <label for="AH_color">AH</label>
+                    <input type="color" name="AH_color" id="AH_color" value="#0000ff"/>
+                </li>
+                <li class="list-group-item vowel-items" hidden>
+                    <label for="AO_color">AO</label>
+                    <input type="color" name="AO_color" id="AO_color" value="#0000ff"/>
+                    <label for="AW_color">AW</label>
+                    <input type="color" name="AW_color" id="AW_color" value="#0000ff"/>
+                    <label for="AY_color">AY</label>
+                    <input type="color" name="AY_color" id="AY_color" value="#0000ff"/>
+                </li>
+                <li class="list-group-item vowel-items" hidden>
+                    <label for="EH_color">EH</label>
+                    <input type="color" name="EH_color" id="EH_color" value="#0000ff"/>
+                    <label for="ER_color">ER</label>
+                    <input type="color" name="ER_color" id="ER_color" value="#0000ff"/>
+                    <label for="EY_color">EY</label>
+                    <input type="color" name="EY_color" id="EY_color" value="#0000ff"/>
+                </li>
+                <li class="list-group-item vowel-items" hidden>
+                    <label for="IH_color">IH</label>
+                    <input type="color" name="IH_color" id="IH_color" value="#0000ff"/>
+                    <label for="IY_color">IY</label>
+                    <input type="color" name="IY_color" id="IY_color" value="#0000ff" />
+                </li>
+                <li class="list-group-item vowel-items" hidden>
+                    <label for="OW_color">OW</label>
+                    <input type="color" name="OW_color" id="OW_color" value="#0000ff"/>
+                    <label for="OY_color">OY</label>
+                    <input type="color" name="OY_color" id="OY_color" value="#0000ff"/>
+                </li>
+                <li class="list-group-item vowel-items" hidden>
+                    <label for="UH_color">UH</label>
+                    <input type="color" name="UH_color" id="UH_color" value="#0000ff"/>
+                    <label for="UW_color">UW</label>
+                    <input type="color" name="UW_color" id="UW_color" value="#0000ff"/>
+                </li>
             </section>
             <section class="phon_color_grp">
-                <label for="semivowels_color">Semivowels</label>
-                <input type="color" name="semivowels_color" id="semivowels_color" value="#800080"/>
-                <label for="semivowels_color_all">Apply to all</label>
-                <input type="checkbox" name="semivowels_color_all" id="semivowels_color_all" checked>
-                <br>
-                <label for="W_color">W</label>
-                <input type="color" name="W_color" id="W_color" value="#800080" disabled/>
-                <label for="Y_color">Y</label>
-                <input type="color" name="Y_color" id="Y_color" value="#800080" disabled/>
+                <li class="list-group-item" id="semivowels_top">
+                    <input type="checkbox" name="semivowels_color_all" id="semivowels_color_all" >
+                    <input type="color" name="semivowels_color" id="semivowels_color" value="#800080"/>
+                    <label for="semivowels_color">Semivowels</label>
+                </li>
+                <li class="list-group-item semivowel-items" hidden>
+                    <label for="W_color">W</label>
+                    <input type="color" name="W_color" id="W_color" value="#800080"/>
+                    <label for="Y_color">Y</label>
+                    <input type="color" name="Y_color" id="Y_color" value="#800080"/>
+                    <label for="HH_color">Aspirate (HH)</label>
+                    <input type="color" name="HH_color" id="HH_color" value="#da70d6"/>
+                </li>
             </section>
             <section class="phon_color_grp">
-                <label for="HH_color">Aspirate (HH)</label>
-                <input type="color" name="HH_color" id="HH_color" value="#da70d6"/>
+                <li class="list-group-item" id="liquids_top">                
+                    <input type="checkbox" name="liquids_color_all" id="liquids_color_all" >
+                    <input type="color" name="liquids_color" id="liquids_color" value="#008000"/>
+                    <label for="liquids_color">Liquids and Nasals</label>
+                </li>
+                <li class="list-group-item liquid-items" hidden>
+                    <label for="L_color">L</label>
+                    <input type="color" name="L_color" id="L_color" value="#008000"/>
+                    <label for="R_color">R</label>
+                    <input type="color" name="R_color" id="R_color" value="#008000"/>
+                </li>
+                <li class="list-group-item liquid-items" hidden>
+                    <label for="M_color">M</label>
+                    <input type="color" name="M_color" id="M_color" value="#adff2f"/>
+                    <label for="N_color">N</label>
+                    <input type="color" name="N_color" id="N_color" value="#adff2f"/>
+                    <label for="NG_color">NG</label>
+                    <input type="color" name="NG_color" id="NG_color" value="#adff2f"/>
+                </li>
             </section>
             <section class="phon_color_grp">
-                <label for="liquids_color">Liquids</label>
-                <input type="color" name="liquids_color" id="liquids_color" value="#008000"/>
-                <label for="liquids_color_all">Apply to all</label>
-                <input type="checkbox" name="liquids_color_all" id="liquids_color_all" checked>
-                <br>
-                <label for="L_color">L</label>
-                <input type="color" name="L_color" id="L_color" value="#008000" disabled/>
-                <label for="R_color">R</label>
-                <input type="color" name="R_color" id="R_color" value="#008000" disabled/>
+                <li class="list-group-item" id="fricatives_top">                
+                    <input type="checkbox" name="fricatives_color_all" id="fricatives_color_all" >
+                    <input type="color" name="fricatives_color" id="fricatives_color" value="#daa520" />
+                    <label for="fricatives_color">Fricatives and Affricates</label>
+                </li>
+                <li class="list-group-item fric-items" hidden>                
+                    <label for="DH_color">DH</label>
+                    <input type="color" name="DH_color" id="DH_color" value="#daa520"/>
+                    <label for="F_color">F</label>
+                    <input type="color" name="F_color" id="F_color" value="#daa520"/>
+                    <label for="S_color">S</label>
+                    <input type="color" name="S_color" id="S_color" value="#daa520"/>
+                </li>
+                <li class="list-group-item fric-items" hidden>                
+                    <label for="SH_color">SH</label>
+                    <input type="color" name="SH_color" id="SH_color" value="#daa520"/>
+                    <label for="TH_color">TH</label>
+                    <input type="color" name="TH_color" id="TH_color" value="#daa520"/>
+                </li>
+                <li class="list-group-item fric-items" hidden>
+                    <label for="V_color">V</label>
+                    <input type="color" name="V_color" id="V_color" value="#daa520"/>
+                    <label for="Z_color">Z</label>
+                    <input type="color" name="Z_color" id="Z_color" value="#daa520"/>
+                    <label for="ZH_color">ZH</label>
+                    <input type="color" name="ZH_color" id="ZH_color" value="#daa520"/>
+                </li>
+                <li class="list-group-item fric-items" hidden>                
+                    <label for="CH_color">CH</label>
+                    <input type="color" name="CH_color" id="CH_color" value="#ffa500"/>
+                    <label for="JH_color">JH</label>
+                    <input type="color" name="JH_color" id="JH_color" value="#ffa500"/>
+                </li>
             </section>
             <section class="phon_color_grp">
-                <label for="nasals_color">Nasals</label>
-                <input type="color" name="nasals_color" id="nasals_color" value="#adff2f"/>
-                <label for="nasals_color_all">Apply to all</label>
-                <input type="checkbox" name="nasals_color_all" id="nasals_color_all" checked>
-                <br>
-                <label for="M_color">M</label>
-                <input type="color" name="M_color" id="M_color" value="#adff2f" disabled/>
-                <label for="N_color">N</label>
-                <input type="color" name="N_color" id="N_color" value="#adff2f" disabled/>
-                <label for="NG_color">NG</label>
-                <input type="color" name="NG_color" id="NG_color" value="#adff2f" disabled/>
-            </section>
-            <section class="phon_color_grp">
-                <label for="fricatives_color">Fricatives</label>
-                <input type="color" name="fricatives_color" id="fricatives_color" value="#daa520" />
-                <label for="fricatives_color_all">Apply to all</label>
-                <input type="checkbox" name="fricatives_color_all" id="fricatives_color_all" checked>
-                <br>
-                <label for="DH_color">DH</label>
-                <input type="color" name="DH_color" id="DH_color" value="#daa520" disabled/>
-                <label for="F_color">F</label>
-                <input type="color" name="F_color" id="F_color" value="#daa520" disabled/>
-                <label for="S_color">S</label>
-                <input type="color" name="S_color" id="S_color" value="#daa520" disabled/>
-                <br>
-                <label for="SH_color">SH</label>
-                <input type="color" name="SH_color" id="SH_color" value="#daa520" disabled/>
-                <label for="TH_color">TH</label>
-                <input type="color" name="TH_color" id="TH_color" value="#daa520" disabled/>
-                <br>
-                <label for="V_color">V</label>
-                <input type="color" name="V_color" id="V_color" value="#daa520" disabled/>
-                <label for="Z_color">Z</label>
-                <input type="color" name="Z_color" id="Z_color" value="#daa520" disabled/>
-                <label for="ZH_color">ZH</label>
-                <input type="color" name="ZH_color" id="ZH_color" value="#daa520" disabled/>
-            </section>
-            <section class="phon_color_grp">
-                <label for="affricates_color">Affricates</label>
-                <input type="color" name="affricates_color" id="affricates_color" value="#ffa500" />
-                <label for="affricates_color_all">Apply to all</label>
-                <input type="checkbox" name="affricates_color_all" id="affricates_color_all" checked>
-                <br>
-                <label for="CH_color">CH</label>
-                <input type="color" name="CH_color" id="CH_color" value="#ffa500" disabled/>
-                <label for="JH_color">JH</label>
-                <input type="color" name="JH_color" id="JH_color" value="#ffa500" disabled/>
-            </section>
-            <section class="phon_color_grp">
-                <label for="stops_color">Stops</label>
-                <input type="color" name="stops_color" id="stops_color" value="#ff0000" />
-                <label for="stops_color_all">Apply to all</label>
-                <input type="checkbox" name="stops_color_all" id="stops_color_all" checked>
-                <br>
-                <label for="B_color">B</label>
-                <input type="color" name="B_color" id="B_color" value="#ff0000" disabled/>
-                <label for="D_color">D</label>
-                <input type="color" name="D_color" id="D_color" value="#ff0000" disabled/>
-                <label for="G_color">G</label>
-                <input type="color" name="G_color" id="G_color" value="#ff0000" disabled/>
-                <br>
-                <label for="K_color">K</label>
-                <input type="color" name="K_color" id="K_color" value="#ff0000" disabled/>
-                <label for="P_color">P</label>
-                <input type="color" name="P_color" id="P_color" value="#ff0000" disabled/>
-                <label for="T_color">T</label>
-                <input type="color" name="T_color" id="T_color" value="#ff0000" disabled/>
+                <li class="list-group-item" id="stops_top">                
+                    <input type="checkbox" name="stops_color_all" id="stops_color_all" >
+                    <input type="color" name="stops_color" id="stops_color" value="#ff0000" />
+                    <label for="stops_color">Stops</label>
+                </li>
+                <li class="list-group-item stop-items" hidden>                
+                    <label for="B_color">B</label>
+                    <input type="color" name="B_color" id="B_color" value="#ff0000"/>
+                    <label for="D_color">D</label>
+                    <input type="color" name="D_color" id="D_color" value="#ff0000"/>
+                    <label for="G_color">G</label>
+                    <input type="color" name="G_color" id="G_color" value="#ff0000"/>
+                </li>
+                <li class="list-group-item stop-items" hidden>                
+                    <label for="K_color">K</label>
+                    <input type="color" name="K_color" id="K_color" value="#ff0000"/>
+                    <label for="P_color">P</label>
+                    <input type="color" name="P_color" id="P_color" value="#ff0000"/>
+                    <label for="T_color">T</label>
+                    <input type="color" name="T_color" id="T_color" value="#ff0000"/>
+                </li>
             </section>
         </form>
     </main>
+    <!-- <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="phonemes.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     --phon-color-IY: yellow; 
 } */
 /* VOWELS */
-.colphon_AA, .colphon_AA0, .colphon_AA1, .colphon_AA2{
+/* .colphon_AA, .colphon_AA0, .colphon_AA1, .colphon_AA2{
   color: blue;
 }
 .colphon_AE, .colphon_AE0, .colphon_AE1, .colphon_AE2{
@@ -58,31 +58,31 @@
 }
 .colphon_UW, .colphon_UW0, .colphon_UW1, .colphon_UW2{
   color: blue;
-}
+} */
 
 /* SEMIVOWELS */
-.colphon_W{
+/* .colphon_W{
   color: purple;
 }
 .colphon_Y{
   color: purple;
-}
+} */
 
 /* ASPIRATE */
-.colphon_HH{
+/* .colphon_HH{
   color: orchid;
-}
+} */
 
 /* LIQUID */
-.colphon_L{
+/* .colphon_L{
   color: green;
 }
 .colphon_R{
   color: green;
-}
+} */
 
 /* NASAL */
-.colphon_M{
+/* .colphon_M{
   color: greenyellow;
 }
 .colphon_N{
@@ -90,10 +90,10 @@
 }
 .colphon_NG{
   color: greenyellow;
-}
+} */
 
 /* FRICATIVE */
-.colphon_DH{
+/* .colphon_DH{
   color: goldenrod;
 }
 .colphon_F{
@@ -116,18 +116,18 @@
 }
 .colphon_ZH{
   color: goldenrod;
-}
+} */
 
 /* AFFRICATE */
-.colphon_CH{
+/* .colphon_CH{
   color: orangered;
 }
 .colphon_JH{
   color: orangered;
-}
+} */
 
 /* STOPS */
-.colphon_B{
+/* .colphon_B{
   color: red;
 }
 .colphon_D{
@@ -144,8 +144,11 @@
 }
 .colphon_T{
   color: red;
-}
+} */
 
+#colorText {
+  font-size: 1.5em;
+}
 .phon_color_grp{
   border: black 2px solid;
   border-radius: 5;
