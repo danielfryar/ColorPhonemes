@@ -1,4 +1,4 @@
-let phonemes = [
+const phonemes = [
   {
     name: "AA",
     type: "vowel",
@@ -194,6 +194,10 @@ let phonemes = [
     active: false
   }
 ];
+const settings = {
+  darkMode: false,
+  highlight: "background" // or "text"
+}
 
 let phonemeDictionary = undefined;
 fetch('./cmudict-0.7b')
@@ -220,6 +224,7 @@ function loadDictionary(dictionaryText) {
     // else 
       phonemeDictionary[chunks[0]] = line.split(' ').slice(2);
   });
+  update();
 }
 
 function colorizeText() {
@@ -455,7 +460,14 @@ const update = () => {
   phonemes.forEach((phoneme) => {
     const queryString = ".colphon_"+phoneme.name;
     document.querySelectorAll(queryString).forEach(el => {
-      el.style.color = phoneme.active ? phoneme.color : '';
+      if (settings.highlight === "text") {
+        el.style.color = phoneme.active ? phoneme.color : '';
+        el.style.backgroundColor = '';
+      }
+      if (settings.highlight === "background") {
+        el.style.color = '';
+        el.style.backgroundColor = phoneme.active ? phoneme.color : '';
+      }
       // if (phoneme.active) el.removeAttribute("hidden")
       // else el.setAttribute("hidden", true);
     })
@@ -521,3 +533,19 @@ phonemes.forEach(phoneme => {
   })
 });
 
+document.getElementsByName('highlight')[0].addEventListener('click', e => {
+  settings.highlight = "text";
+  update();
+})
+document.getElementsByName('highlight')[1].addEventListener('click', e => {
+  settings.highlight = "background";
+  update();
+})
+  // console.log("radio")
+  // if (e.currentTarget[0].checked) { //Text
+  // } 
+  // if (e.currentTarget[1].checked) { //Background}
+  //   settings.highlight = "background"
+  // }
+  // update();
+// })
