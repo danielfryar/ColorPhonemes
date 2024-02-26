@@ -1,62 +1,201 @@
-let phonemeDictionary = undefined;
-let phonemes = {
-  "vowels": ["AA", "AE", "AH", "AO", "AW", "AY", "EH", "ER", "EY", "IH", "IY", "OW", "OY", "UH", "UW"],
-  "semivowels": ["W", "Y", "HH"],
-  // "aspirates": ["HH"],
-  "liquids_nasals": ["L", "R", "M", "N", "NG"],
-  // "nasals": ["M", "N", "NG"],
-  // "affricates": ["CH", "JH"],
-  "fricatives": ["F", "S", "SH", "TH", "V", "Z", "ZH", "CH", "JH"],
-  "stops": ["B", "D", "G", "K", "P", "T"]
-}
-//   {
-//     name: "AA",
-//     type:	"vowel"
-//   },
-//   {
-//     name: "AE",
-//     type:	"vowel"
-//   },
-//     "AH"	"vowel"
-//     "AO"	"vowel"
-//     "AW"	"vowel"
-//     "AY"	"vowel"
-//     "EH"	"vowel"
-//     "ER"	"vowel"
-//     "EY"	"vowel"
-//     "IH"	"vowel"
-//     "IY"	"vowel"
-//     "OW"	"vowel"
-//     "OY"	"vowel"
-//     "UH"	"vowel"
-//     "UW"	"vowel"
-//     "W"	"semivowel"
-//     "Y"	"semivowel"
-//     "HH"	"aspirate"
-//     "L"	"liquid"
-//     "R"	"liquid"
-//     "M"	"nasal"
-//     "N"	"nasal"
-//     "NG"	"nasal"
-//     "CH"	"affricate"
-//     "JH"	"affricate"
-//     "DH"	"fricative"
-//     "F"	"fricative"
-//     "S"	"fricative"
-//     "SH"	"fricative"
-//     "TH"	"fricative"
-//     "V"	"fricative"
-//     "Z"	"fricative"
-//     "ZH"	"fricative"
-//     "B"	"stop"
-//     "D"	"stop"
-//     "G"	"stop"
-//     "K"	"stop"
-//     "P"	"stop"
-//     "T"	"stop"
-//     '
-// ]
+let phonemes = [
+  {
+    name: "AA",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "AE",
+    color: "blue",
+    active: true
+  }, {
+    name: "AH",
+    color: "blue",
+    active: true
+  }, {
+    name: "AO",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "AW",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "AY",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "EH",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "ER",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "EY",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "IH",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "IY",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "OW",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "OY",
+    type: "vowel",
+    color: "blue",
+    active: true
+  }, {
+    name: "UH",
+    type: "vowel",
+    color: "blue",
+    active: true
+  },{ 
+    name: "UW",
+    type: "vowel",
+    color: "blue",
+    active: true
+  },{ 
+    name: "W",
+    type: "semivowel",
+    color: "purple",
+    active: false
+  },{ 
+    name: "Y",
+    type: "semivowel",
+    color: "purple",
+    active: false
+  },{ 
+    name: "HH",
+    type: "aspirate",
+    color: "purple",
+    active: false
+  },{ 
+    name: "L",
+    type: "liquid",
+    color: "teal",
+    active: false
+  }, {
+    name: "R",
+    type: "liquid",
+    color: "teal",
+    active: false
+  }, {
+    name: "M",
+    type: "nasal",
+    color: "green",
+    active: false
+  }, {
+    name: "N",
+    type: "nasal",
+    color: "green",
+    active: false
+  }, {
+    name: "NG",
+    type: "nasal",
+    color: "green",
+    active: false
+  }, {
+    name: "DH",
+    type: "fricative",
+    color: "orange",
+    active: false
+  }, {
+    name: "F",
+    type: "fricative",
+    color: "orange",
+    active: false
+  }, {
+    name: "S",
+    type: "fricative",
+    color: "orange",
+    active: false
+  }, {
+    name: "SH",
+    type: "fricative",
+    color: "orange",
+    active: false
+  }, {
+    name: "TH",
+    type: "fricative",
+    color: "orange",
+    active: false
+  }, {
+    name: "V",
+    type: "fricative",
+    color: "orange",
+    active: false
+  }, {
+    name: "Z",
+    type: "fricative",
+    color: "orange",
+    active: false
+  }, {
+    name: "ZH",
+    type: "fricative",
+    color: "orange",
+    active: false
+  }, {
+    name: "CH",
+    type: "affricate",
+    color: "orange",
+    active: false
+  }, {
+    name: "JH",
+    type: "affricate",
+    color: "purple",
+    active: false
+  }, {
+    name: "B",
+    type: "stop",
+    color: "red",
+    active: false
+  }, {
+    name: "D",
+    type: "stop",
+    color: "red",
+    active: false
+  }, { 
+    name: "G",
+    type: "stop",
+    color: "red",
+    active: false
+  }, { 
+    name: "K",
+    type: "stop",
+    color: "red",
+    active: false
+  }, { 
+    name: "P",
+    type: "stop",
+    color: "red",
+    active: false
+  }, { 
+    name: "T",
+    type: "stop",
+    color: "red",
+    active: false
+  }
+];
 
+let phonemeDictionary = undefined;
 fetch('./cmudict-0.7b')
 .then(response => response.text())
 .then(text => {
@@ -91,34 +230,52 @@ function colorizeText() {
     // const colorText = document.getElementById('colorText')
     colorText.innerHTML += colorizeWord(word) + ' '
   })
-  colorText.parentElement.removeAttribute("hidden")
+  // const segmenter = new Intl.Segmenter('en', { granularity: 'word' });
+  // const segmentedText = segmenter.segment(text);
+  // const words = [...segmentedText].filter(s => s.isWordLike).map(s => s.segment);
+  // words.forEach(word => {
+  //   colorText.innerHTML += colorizeWord(word) + ' ';
+  // })
+  colorText.parentElement.removeAttribute("hidden");
+  update();
 }
+
 function colorizeWord(word) {
   //TODO: take care of punctuation
-  const phonemeSet = phonemeDictionary[word.toUpperCase()];
-  const letters = word.split('');
-
-  let output = '<span class="colword">';
-  if (!phonemeSet) output += `<span class="unknown_word">${word}</span>`;
-  else {
-    const diff = letters.length - phonemeSet.length;
-    for (let i=0;i<phonemeSet.length;i++) {
-      // TODO: replace this simple method with switch cases
-      output += `<span class="colphon_${phonemeSet[i]}">${letters[i]}</span>`
-    }
-    if (diff > 0) {
-      output += `<span class="colphon_X">${word.slice(phonemeSet.length)}</span>`
+  const punctuation = ['"', "'", ".", ",", "?", "!", "-", ";", ":"];
+  let startingPunctuation = "", endingPunctuation = "";
+  if (punctuation.includes(word[0])) {
+    startingPunctuation = word[0]; 
+    word = word.slice(1, word.length);
+  }
+  if (punctuation.includes(word[word.length-1])) {
+    endingPunctuation = word[word.length-1];
+    word = word.slice(0, word.length-1);
+    if (punctuation.includes(word[word.length-1])) { // double punctuation
+      endingPunctuation = word[word.length-1] + endingPunctuation;
+      word = word.slice(0, word.length-1);
     }
   }
-  output += '</span>'
-  return output
+
+  const phonemeSet = phonemeDictionary[word.toUpperCase()];
+  if (!phonemeSet) {
+    return `<span class="unknown_word">${startingPunctuation+word+endingPunctuation}</span>`;
+  }
+  
+  let output = `${startingPunctuation}<span class="colword">`;
+  const letters = word.split('');
+  const diff = letters.length - phonemeSet.length;
+  for (let i=0;i<phonemeSet.length;i++) {
+    // TODO: replace this simple method with switch cases
+    
+    output += `<span class="colphon_${phonemeSet[i].length === 3 ? phonemeSet[i].slice(0,2) : phonemeSet[i]}">${letters[i]}</span>`
+  }
+  if (diff > 0) {
+    output += `<span class="colphon_X">${word.slice(phonemeSet.length)}</span>`
+  }
+  output += `</span>${endingPunctuation}`;
+  return output;
 }
-const colorSelects = document.querySelectorAll('input[type="color"]');
-colorSelects.forEach(element => {
-  element.addEventListener("change", event => {
-    console.log(event);
-  })
-});
 
 // setTimeout(()=>{
 //   console.log(colorizeWord('AARDVARK'))
@@ -294,131 +451,73 @@ colorSelects.forEach(element => {
 //         // }
 //     }
 
-visible = {
-  vowels : false,
-  semivowels : false,
-  liquids : false,
-  fricatives : false,
-  stops : false
+const update = () => {
+  phonemes.forEach((phoneme) => {
+    const queryString = ".colphon_"+phoneme.name;
+    document.querySelectorAll(queryString).forEach(el => {
+      el.style.color = phoneme.active ? phoneme.color : '';
+      // if (phoneme.active) el.removeAttribute("hidden")
+      // else el.setAttribute("hidden", true);
+    })
+  })
 }
 
-document.getElementById("vowels_top").addEventListener('click', (e) => {
-  if (e.target === e.currentTarget) {
-    visible.vowels = !visible.vowels;
-    document.querySelectorAll(".vowel-items").forEach(element => {
-      if (visible.vowels) element.removeAttribute("hidden")
-      else element.setAttribute("hidden", true);
-    });
+const groupings = [
+  {
+    name: "vowels",
+    visible: false,
+    phonemes: ["AA","AE","AH","AO","AW","AY","EH","ER","EY","IH","IY","OW","OY","UH","UW"]
+  }, {
+    name: "semivowels",
+    visible: false,
+    phonemes: ["W", "Y", "HH"]
+  }, {
+    name: "liquids",
+    visible: false,
+    phonemes: ["L", "R", "M", "N", "NG"]
+  }, {
+    name: "fricatives",
+    visible: false,
+    phonemes: ["CH","JH","DH","F","S","SH","TH","V","Z","ZH"]
+  }, {
+    name: "stops",
+    visible: false,
+    phonemes: ["B", "D", "G", "K", "P", "T"]
   }
-});
-document.getElementById("semivowels_top").addEventListener('click', (e) => {
-  if (e.target === e.currentTarget) {
-    visible.semivowels = !visible.semivowels;
-    document.querySelectorAll(".semivowel-items").forEach(element => {
-      if (visible.semivowels) element.removeAttribute("hidden")
-      else element.setAttribute("hidden", true);
-    });
-  }
-});
-document.getElementById("liquids_top").addEventListener('click', (e) => {
-  if (e.target === e.currentTarget) {
-    visible.liquids = !visible.liquids;
-    document.querySelectorAll(".liquid-items").forEach(element => {
-      if (visible.liquids) element.removeAttribute("hidden")
-      else element.setAttribute("hidden", true);
-    });
-  }
-});
-document.getElementById("fricatives_top").addEventListener('click', (e) => {
-  if (e.target === e.currentTarget) {
-    visible.fricatives = !visible.fricatives;
-    document.querySelectorAll(".fric-items").forEach(element => {
-      if (visible.fricatives) element.removeAttribute("hidden")
-      else element.setAttribute("hidden", true);
-    });
-  }
-});
-document.getElementById("stops_top").addEventListener('click', (e) => {
-  if (e.target === e.currentTarget) {
-    visible.stops = !visible.stops;
-    document.querySelectorAll(".stop-items").forEach(element => {
-      if (visible.stops) element.removeAttribute("hidden")
-      else element.setAttribute("hidden", true);
-    });
-  }
+]
+groupings.forEach(grouping => {
+  document.getElementById(grouping.name + "_top").addEventListener('click', e => {
+    if (e.target === e.currentTarget) {
+      grouping.visible = !grouping.visible;
+      document.querySelectorAll("."+grouping.name+"-items").forEach(el => {
+        if (grouping.visible) el.removeAttribute("hidden")
+        else el.setAttribute("hidden", true);
+      }) 
+    }
+  })
+  document.getElementById(grouping.name + "_active").addEventListener('change', e => {
+    e.stopPropagation();
+    phonemes.filter(phon => grouping.phonemes.includes(phon.name)).forEach(phon => phon.active = e.currentTarget.checked);
+    update();
+  })
+  document.getElementById(grouping.name + "_color").addEventListener('change', e => {
+    e.stopPropagation();
+    const selectedColor = e.currentTarget.value;
+    phonemes.filter(phon => grouping.phonemes.includes(phon.name)).forEach(phon => {
+      // console.log(phon)
+      document.getElementById(phon.name + "_color").value = selectedColor;
+      phon.color = selectedColor;
+    })
+    update();
+  })
+  // const selectedColor = document.getElementById
+})
+
+phonemes.forEach(phoneme => {
+  document.getElementById(phoneme.name + "_color").addEventListener('change', e => {
+    phoneme.color = e.currentTarget.value;
+    console.log(phoneme);
+    update();
+  })
 });
 
-document.getElementById("vowels_color_all").addEventListener("change", (e) => {
-  e.stopPropagation()
-  const selectedColor = document.getElementById("vowels_color").value;
-  console.log(selectedColor)
-  phonemes.vowels.forEach(ph => {
-    console.log(".colphon_"+ph +",colphon_"+ph+"0"+",colphon_"+ph+"1"+",colphon_"+ph+"2")
-    document.querySelectorAll(".colphon_"+ph+",.colphon_"+ph+"0"+",.colphon_"+ph+"1"+",.colphon_"+ph+"2").forEach(el => {
-      if (e.currentTarget.checked) {
-        el.style.color = selectedColor;
-      } else {
-        el.style.color = "";
-      }
-    })
-  })
-})
-document.getElementById("semivowels_color_all").addEventListener("change", (e) => {
-  e.stopPropagation()
-  const selectedColor = document.getElementById("semivowels_color").value;
-  console.log(selectedColor)
-  phonemes.semivowels.forEach(ph => {
-    console.log(".colphon_"+ph)
-    document.querySelectorAll(".colphon_"+ph).forEach(el => {
-      if (e.currentTarget.checked) {
-        el.style.color = selectedColor;
-      } else {
-        el.style.color = "";
-      }
-    })
-  })
-})
-document.getElementById("liquids_color_all").addEventListener("change", (e) => {
-  e.stopPropagation()
-  const selectedColor = document.getElementById("liquids_color").value;
-  console.log(selectedColor)
-  phonemes.liquids_nasals.forEach(ph => {
-    document.querySelectorAll(".colphon_"+ph).forEach(el => {
-      if (e.currentTarget.checked) {
-        el.style.color = selectedColor;
-      } else {
-        el.style.color = "";
-      }
-    })
-  })
-})
-document.getElementById("fricatives_color_all").addEventListener("change", (e) => {
-  e.stopPropagation()
-  const selectedColor = document.getElementById("fricatives_color").value;
-  console.log(selectedColor)
-  phonemes.fricatives.forEach(ph => {
-    document.querySelectorAll(".colphon_"+ph).forEach(el => {
-      if (e.currentTarget.checked) {
-        el.style.color = selectedColor;
-      } else {
-        el.style.color = "";
-      }
-    })
-  })
-})
-document.getElementById("stops_color_all").addEventListener("change", (e) => {
-  e.stopPropagation()
-  const selectedColor = document.getElementById("stops_color").value;
-  console.log(selectedColor)
-  phonemes.stops.forEach(ph => {
-    document.querySelectorAll(".colphon_"+ph).forEach(el => {
-      if (e.currentTarget.checked) {
-        // document.getElementById(ph+"_color").disabled = false;
-        el.style.color = document.getElementById(ph+"_color").value;
-      } else {
-        // document.getElementById(ph+"_color").disabled = true;
-        el.style.color = "";
-      }
-    })
-  })
-})
